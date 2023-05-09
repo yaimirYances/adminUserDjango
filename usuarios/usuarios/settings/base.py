@@ -4,7 +4,7 @@ from django.core.exceptions import ImproperlyConfigured
 import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -35,6 +35,7 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
+    'aplicaciones.users',
     
 )
 
@@ -55,6 +56,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'usuarios.urls'
+print("="*19)
+print([BASE_DIR / 'templates'])
 
 TEMPLATES = [
     {
@@ -92,6 +95,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#Configurando modelo de trabajo de usuarios
+AUTH_USER_MODEL = 'users.User'
 
 
 # Internationalization
