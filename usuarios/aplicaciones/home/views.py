@@ -5,14 +5,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 
-# Create your views here.
-
+###################################################
+#   Plantilla del panel de logueados, si no esta loqueado 
+#   sera redirigido a la platilla der login
 class PanelUsers(LoginRequiredMixin, TemplateView):
     template_name = "home/index.html"
     #Si el usuario no esta logueado lo redirigimos
-    login_url = (
+    login_url = reverse_lazy(
         "user_app:loginUser"
     )
+
 
 ###################################################
 class FechaMixin(object):

@@ -25,3 +25,10 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = '/media/' #url de almacenamiento
 MEDIA_ROOT = BASE_DIR / 'media'
 #print(BASE_DIR / 'media')
+
+#Configurando el correo electronico para enviar emails
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = get_secret("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = 587
